@@ -1,0 +1,90 @@
+@charset "utf-8";
+/* 这样的注释是会编译在css文件当中 */
+/*=======变量================*/
+/*怎么申明一个变量  var a = 10;*/
+a {
+  color: #333;
+  background: #e92323;
+  border: 1px solid #e92323;
+}
+a:hover {
+  color: #e92323;
+}
+/*=======混入 mixin================*/
+/*类混入*/
+.c_red {
+  color: red;
+}
+.b_red {
+  border: 1px solid red;
+}
+.colorAndBorderRed {
+  background: #e92323;
+  color: red;
+  border: 1px solid red;
+}
+/*函数混入  function a(){}*/
+/*function a(name){alert(name)}*/
+/*less .func_b_red(@radius:100px){}*/
+.colorAndBorderRedFunc {
+  background: #e92323;
+  color: red;
+  border: 1px solid red;
+  -webkit-border-radius: 50px;
+  -moz-border-radius: 50px;
+  -o-border-radius: 50px;
+  -ms-border-radius: 50px;
+  border-radius: 50px;
+}
+/*=======嵌套================*/
+/*手机app*/
+/*.wjs_app{
+  position: relative;
+  z-index: 10000;
+  display: block;
+}
+.wjs_app img{
+  display: none;
+}
+.wjs_app:hover img{
+  display: block;
+  position: absolute;
+  left: 50%;
+  top: 40px;
+  margin-left: -60px;
+  border: 1px solid #ccc;
+  border-top: none;
+}*/
+.wjs_app {
+  position: relative;
+  z-index: 10000;
+  display: block;
+  /*&紧跟上一层元素 伪类 元素*/
+}
+.wjs_app img {
+  display: none;
+}
+.wjs_app:hover img {
+  display: block;
+  position: absolute;
+  left: 50%;
+  top: 40px;
+  margin-left: -60px;
+  border: 1px solid #ccc;
+  border-top: none;
+}
+/*========导入 import========*/
+/*申明变量*/
+/*申明变量*/
+.gray .colorGray {
+  color: #ccc;
+  color: #707070;
+  /*要求比#666这个颜色要亮10%*/
+  background: #808080;
+}
+/*=======函数和运算==========*/
+.gray {
+  color: #707070;
+  /*要求比#666这个颜色要亮10%*/
+  background: #808080;
+}

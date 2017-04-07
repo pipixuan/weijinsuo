@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html>
+<head lang="en">
+    <meta charset="UTF-8">
+    <meta name="viewport"
+          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0"/>
+    <title></title>
+    <style>
+        body{
+            margin: 0;
+            padding: 0;
+        }
+        /*
+         640px  100px
+         375px  58.59375px
+         320px  50px
+        */
+        header{
+            height: 1rem;
+            width: 100%;
+            font-size: 0.5rem;
+            line-height: 1rem;
+            text-align: center;
+            background: greenyellow;
+        }
+        /*媒体查询 适配主流机型*/
+        @media (min-width: 320px) {
+            html{
+                font-size: 50px;
+            }
+        }
+        @media (min-width: 375px) {
+            html{
+                font-size: 58.59375px
+            }
+        }
+        @media (min-width: 414px) {
+            html{
+                font-size: 64.6875px
+            }
+        }
+        @media (min-width: 640px) {
+            html{
+                font-size: 100px
+            }
+        }
+        span{
+            height: 0.5rem;
+            width: 0.5rem;
+            display: block;
+            background: red;
+            border: 0.1rem solid black;
+            float: left;
+        }
+    </style>
+</head>
+<body>
+    <header><span></span>购物车</header>
+</body>
+</html>

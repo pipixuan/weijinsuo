@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html style="font-size:50px">
+<head lang="en">
+    <meta charset="UTF-8">
+    <title></title>
+    <style>
+        div{
+            font-size: 20px;
+        }
+        .em{
+            font-size: 2em;/*em的单位是  和父元素有关系*/
+            line-height: 1;
+        }
+        .rem{
+            /*r   root rem是仅仅和根元素有关系 html是根元素*/
+            font-size: 2rem;
+            line-height: 1;
+        }
+    </style>
+</head>
+<body>
+    <div>
+        <div class="em">AAA</div>
+    </div>
+    <div>
+        <div class="rem">AAA</div>
+    </div>
+</body>
+</html>

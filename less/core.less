@@ -1,0 +1,106 @@
+@charset "utf-8";
+/* 这样的注释是会编译在css文件当中 */
+// 这样的注释是不会编译在css文件当中
+
+/*=======变量================*/
+/*怎么申明一个变量  var a = 10;*/
+@mainColor:#e92323;
+
+a{
+  color: #333;
+  background: @mainColor;
+  border: 1px solid @mainColor;
+}
+a:hover{
+  color: @mainColor;
+}
+
+/*=======混入 mixin================*/
+/*类混入*/
+.c_red{
+  color: red;
+}
+.b_red{
+  border:1px solid red;
+}
+.colorAndBorderRed{
+  background: @mainColor;
+  .c_red();
+  .b_red();
+}
+/*函数混入  function a(){}*/
+.func_c_red(){
+    color: red;
+}
+/*function a(name){alert(name)}*/
+/*less .func_b_red(@radius:100px){}*/
+.func_b_red(@radius:100px){
+  border: 1px solid red;
+  //兼容问题
+  -webkit-border-radius: @radius;
+  -moz-border-radius:@radius;
+  -o-border-radius: @radius;
+  -ms-border-radius: @radius;
+  border-radius: @radius;
+}
+
+.colorAndBorderRedFunc{
+  background: @mainColor;
+  .func_c_red();
+
+  .func_b_red(50px);
+}
+
+/*=======嵌套================*/
+/*手机app*/
+/*.wjs_app{
+  position: relative;
+  z-index: 10000;
+  display: block;
+}
+.wjs_app img{
+  display: none;
+}
+.wjs_app:hover img{
+  display: block;
+  position: absolute;
+  left: 50%;
+  top: 40px;
+  margin-left: -60px;
+  border: 1px solid #ccc;
+  border-top: none;
+}*/
+
+.wjs_app{
+  position: relative;
+  z-index: 10000;
+  display: block;
+  img{
+    display: none;
+  }
+  /*&紧跟上一层元素 伪类 元素*/
+  &:hover{
+    img{
+      display: block;
+      position: absolute;
+      left: 50%;
+      top: 40px;
+      margin-left: -60px;
+      border: 1px solid #ccc;
+      border-top: none;
+    }
+  }
+}
+
+/*========导入 import========*/
+@import "va";
+@import "fuc";
+@import "gray";
+
+
+/*=======函数和运算==========*/
+.gray{
+  color: #666*1.1;
+  /*要求比#666这个颜色要亮10%*/
+  background: lighten(#666,10%);
+}
